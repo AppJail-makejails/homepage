@@ -1,0 +1,32 @@
+INCLUDE options/options.makejail
+
+ARG homepage_tag=13.3
+
+FROM --entrypoint gh+AppJail-makejails/homepage homepage:${homepage_tag}
+
+STOP
+
+STAGE start
+
+WORKDIR /homepage/src
+
+RUN daemon \
+        -r \
+        -u homepage \
+        -t "Highly customizable homepage with Docker and service API integrations" \
+        -P /homepage/.master.pid \
+        -p /homepage/.pid \
+        -o /homepage/.log \
+            pnpm start
+
+STAGE custom:homepage_status
+
+CMD if [ -f "/homepage/.pid" ]; then \
+        top -ap `head -1 /homepage/.pid`; \
+    fi
+
+STAGE custom:homepage_log
+
+CMD if [ -f "/homepage/.log" ]; then \
+        less -R /homepage/.log; \
+    fi
