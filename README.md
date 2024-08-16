@@ -32,6 +32,8 @@ services:
   homepage:
     name: homepage
     makejail: gh+AppJail-makejails/homepage
+    options:
+      - expose: 3000
     volumes:
       - config: /homepage/src/config
 
