@@ -72,5 +72,5 @@ appjail run -s homepage_log homepage
 
 | Tag    | Arch    | Version        | Type   | `homepage_version` |
 | ------ | ------- | -------------- | ------ | ------------------ |
-| `13.4` | `amd64` | `13.4-RELEASE` | `thin` | `0.9.6`            |
-| `14.1` | `amd64` | `14.1-RELEASE` | `thin` | `0.9.6`            |
+| `13.4` | `amd64` | `13.4-RELEASE` | `thin` | `0.9.9`            |
+| `14.1` | `amd64` | `14.1-RELEASE` | `thin` | `0.9.9`            |
