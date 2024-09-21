@@ -1,6 +1,6 @@
 INCLUDE options/options.makejail
 
-ARG homepage_tag=13.3
+ARG homepage_tag=13.4
 
 FROM --entrypoint gh+AppJail-makejails/homepage homepage:${homepage_tag}
 
