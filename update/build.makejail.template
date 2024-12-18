@@ -1,5 +1,4 @@
 INCLUDE options/options.makejail
-INCLUDE resizewin-fix.makejail
 
 ARG homepage_version=%%VERSION%%
 
