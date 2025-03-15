@@ -50,7 +50,7 @@ DIRECTOR_PROJECT=homepage
 
 ### Arguments (stage: build):
 
-* `homepage_tag` (default: `13.4`): See [#tags](#tags).
+* `homepage_tag` (default: `13.5`): See [#tags](#tags).
 * `homepage_ajspec` (default: `gh+AppJail-makejails/homepage`): Entry point where the `appjail-ajspec(5)` file is located.
 
 ### Check current status
@@ -73,5 +73,5 @@ appjail run -s homepage_log homepage
 
 | Tag    | Arch    | Version        | Type   | `homepage_version` |
 | ------ | ------- | -------------- | ------ | ------------------ |
-| `13.4` | `amd64` | `13.4-RELEASE` | `thin` | `0.10.9`           |
+| `13.5` | `amd64` | `13.5-RELEASE` | `thin` | `0.10.9`           |
 | `14.2` | `amd64` | `14.2-RELEASE` | `thin` | `0.10.9`           |
