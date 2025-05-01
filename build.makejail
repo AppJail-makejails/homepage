@@ -1,6 +1,6 @@
 INCLUDE options/options.makejail
 
-ARG homepage_version=1.2.1
+ARG homepage_version=1.2.0
 
 PKG npm
 
