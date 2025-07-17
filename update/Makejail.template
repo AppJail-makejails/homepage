@@ -5,27 +5,5 @@ ARG homepage_ajspec=gh+AppJail-makejails/homepage
 
 FROM --entrypoint "${homepage_ajspec}" homepage:${homepage_tag}
 
-STOP
-
-STAGE start
-
-WORKDIR /homepage/src
-
-RUN daemon \
-        -u homepage \
-        -t "Highly customizable homepage with Docker and service API integrations" \
-        -p /homepage/.pid \
-        -o /homepage/.log \
-            pnpm start
-
-STAGE custom:homepage_status
-
-CMD if [ -f "/homepage/.pid" ]; then \
-        top -ap `head -1 /homepage/.pid`; \
-    fi
-
-STAGE custom:homepage_log
-
-CMD if [ -f "/homepage/.log" ]; then \
-        less -R /homepage/.log; \
-    fi
+SYSRC homepage_enable=YES
+SERVICE homepage start

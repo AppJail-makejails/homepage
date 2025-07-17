@@ -1,29 +1,4 @@
 INCLUDE options/options.makejail
+INCLUDE options/volumes.makejail
 
-ARG homepage_version=1.3.2
-
-PKG npm
-
-CMD corepack enable
-
-CMD pw useradd \
-        -n homepage \
-        -d /homepage \
-        -s /bin/sh \
-        -c "Highly customizable homepage with Docker and service API integrations"
-CMD mkdir -p /homepage
-
-CMD mkdir -p /homepage/src
-CMD fetch -o /tmp/src.tgz \
-        https://github.com/gethomepage/homepage/archive/refs/tags/v${homepage_version}.tar.gz
-CMD tar -C /homepage/src --strip-components=1 -xf /tmp/src.tgz
-CMD rm -f /tmp/src.tgz
-
-CMD chown -R homepage:homepage /homepage
-
-COPY install-pnpm.sh /tmp/install-pnpm.sh
-RUN chmod +x /tmp/install-pnpm.sh
-USER homepage
-RUN /tmp/install-pnpm.sh
-
-CMD rm -f /tmp/install-pnpm.sh
+PKG homepage
