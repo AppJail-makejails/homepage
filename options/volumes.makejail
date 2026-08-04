@@ -1,1 +1,0 @@
-OPTION volume=homepage-config mountpoint:/usr/local/www/homepage/config owner:0 group:0

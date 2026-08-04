@@ -1,9 +1,6 @@
-INCLUDE options/options.makejail
+ARG homepage_from=ghcr.io/appjail-makejails/homepage
+ARG homepage_tag=latest
 
-ARG homepage_tag=14.3
-ARG homepage_ajspec=gh+AppJail-makejails/homepage
-
-FROM --entrypoint "${homepage_ajspec}" homepage:${homepage_tag}
-
-SYSRC homepage_enable=YES
-SERVICE homepage start
+OPTION container=boot
+OPTION overwrite=force
+OPTION from=${homepage_from}:${homepage_tag}

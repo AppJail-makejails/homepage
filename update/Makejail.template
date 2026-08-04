@@ -1,9 +1,0 @@
-INCLUDE options/options.makejail
-
-ARG homepage_tag=%%TAG1%%
-ARG homepage_ajspec=gh+AppJail-makejails/homepage
-
-FROM --entrypoint "${homepage_ajspec}" homepage:${homepage_tag}
-
-SYSRC homepage_enable=YES
-SERVICE homepage start
