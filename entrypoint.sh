@@ -19,10 +19,10 @@ if [ "$HOSTNAME" = "::" ]; then
   fi
 fi
 
-chown -R noroot:noroot "${APPDIR}/config"
+change_owner "${APPDIR}/config"
 
 if [ -d "${APPDIR}/.next" ]; then
-    chown -R noroot:noroot "${APPDIR}/.next"
+    change_owner "${APPDIR}/.next"
 fi
 
 if [ "$(id -u)" = 0 ]; then
