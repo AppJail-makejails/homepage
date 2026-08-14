@@ -14,7 +14,7 @@ LABEL org.opencontainers.image.title="Homepage" \
 RUN set -xe; \
     \
     pkg update; \
-    pkg install -U homepage; \
+    pkg install homepage; \
     \
     if [ -z "${NO_PKGCLEAN}" ]; then \
         pkg clean -a; \
